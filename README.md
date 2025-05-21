@@ -14,13 +14,11 @@ cd ./dotfiles
 ```shell
 make connect
 ```
-- Or run all scripts directly (in case if `make` was not installed)
+- Or run the script directly (in case if `make` was not installed)
 ```shell
-./scripts/vim.sh
-# all scripts except vars.sh
+./scripts/sync.sh .vimrc .zshrc # Recheck the arguments in the `dotfiles/Makefile` list `CONFIGS`
 ```
 
 ## To add a new config
-- Copy your `$HOME./[.your_rc]` into `$HOME/dotfiles/src/[.your_rc]`
-- Write a link script (see dotfiles/scripts/vim.sh)
-- Add your link script under `dotfiles/Makefile` command `connect`
+- Copy your `$HOME./[.your_rc]` into `$HOME/dotfiles/src/[.your_rc]`. Eg: `.vimrc`
+- Add `[.your_rc]` eg `.vimrc` to the `dotfiles/Makefile` list `CONFIGS`

@@ -1,7 +1,7 @@
 .PHONY: connect
 
-SCRIPTS_PATH=./scripts
+SCRIPTS_PATH := ./scripts
+CONFIGS := .vimrc
 
 connect:
-	$(SCRIPTS_PATH)/vim.sh
-	# Place your link scripts here. See vim.sh above
+	$(SCRIPTS_PATH)/sync.sh $(CONFIGS) 
