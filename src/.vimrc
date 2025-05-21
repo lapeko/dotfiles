@@ -27,8 +27,6 @@
   set wildmenu
   " Show incomplete commands
   set showcmd
-  " Show minimum N lines of the top/bottom of the screen
-  set scrolloff=5
 
 " APPERIENCE
   " Set color scheme
@@ -37,7 +35,8 @@
   set number
   " Show the cursor position
   set ruler
-
+  " Show minimum N lines of the top/bottom of the screen
+  set scrolloff=5
 
 " SEARCH
   " incsearch
