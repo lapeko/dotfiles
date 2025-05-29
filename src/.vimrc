@@ -29,17 +29,23 @@
   set showcmd
 
 " APPERIENCE
-  " Set color scheme
-  color desert
+  " Set color scheme (preferred: desert, slate, wildcharm)
+  color slate
   " Show line numbers
   set number
   " Show the cursor position
   set ruler
   " Show minimum N lines of the top/bottom of the screen
   set scrolloff=5
+  " linebreak
+  set lbr
 
 " SEARCH
   " incsearch
   set is
   " hlsearh
   set hls
+  " ignorecase
+  set ic
+  " smartcase
+  set scs
