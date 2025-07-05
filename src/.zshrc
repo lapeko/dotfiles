@@ -127,35 +127,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 source <(ng completion script)
 
 # My User settings
-
-jb() {
-  local -A ides=(
-    ['go']="$HOME/.local/share/JetBrains/Toolbox/apps/goland/bin/goland"
-    ['storm']="$HOME/.local/share/JetBrains/Toolbox/apps/webstorm/bin/webstorm"
-    ['idea']="$HOME/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea"
-    ['php']="$HOME/.local/share/JetBrains/Toolbox/apps/phpstorm/bin/phpstorm"
-  )
-
-  local available_ides=$(echo "${!ides[*]}" | sed 's/ /, /g')
-
-  if [ $# -eq 0 ]; then
-    echo -e "No provided arguments. Please provide one of: $available_ides" >&2
-    return 1
-  fi
-
-  local key="$1"
-  shift
-
-  if [[ -v "ides[$key]" ]]; then
-    local args=$([ $# -eq 0 ] && echo '.' || echo "$@")
-    bash -c "nohup ${ides[$key]} $args &> /dev/null &"
-  else
-    echo -e "Unknown IDE key. Please provide one of $available_ides" >&2
-    return 1
-  fi
-}
-
-
 mksh() {
   if [ $# -eq 0 ]; then
     local filename=./script.sh
@@ -169,7 +140,7 @@ mksh() {
   fi
 
   touch "${filename}"
-  echo '#!/bin/bash' > "${filename}"
+  echo '#!/usr/bin/env bash' > "${filename}"
   chmod +x "${filename}"
   echo "script '${filename}' created and made executable"
 }
@@ -181,5 +152,4 @@ source <(kubectl completion zsh)
 alias k=kubectl
 complete -o default -F __start_kubectl k
 
-# Binary of k8s kustomize
-export PATH="$PATH:$HOME/.local/bin"
+complete -o nospace -C /usr/bin/terraform terraform
