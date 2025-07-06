@@ -145,6 +145,10 @@ mksh() {
   echo "script '${filename}' created and made executable"
 }
 
+idea() {
+  idea "$@" &>/dev/null &
+}
+
 alias ls="lsd"
 source $HOME/.config/broot/launcher/bash/br
 
