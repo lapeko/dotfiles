@@ -168,3 +168,6 @@ alias k=kubectl
 complete -o default -F __start_kubectl k
 
 complete -o nospace -C /usr/bin/terraform terraform
+
+# Created by `pipx` on 2025-07-07 10:59:42
+export PATH="$PATH:/home/vitali/.local/bin"
