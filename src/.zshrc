@@ -145,21 +145,6 @@ mksh() {
   echo "script '${filename}' created and made executable"
 }
 
-idea() {
-  IDEA_BIN=/home/vitali/.local/share/JetBrains/Toolbox/scripts/idea
-  
-  if [[ ! -x "$IDEA_BIN" ]]; then
-    echo "IDEA not found at $IDEA_BIN" >&2
-    return 1
-  fi
-
-  if [[ $# -eq 0 ]]; then
-    "$IDEA_BIN" &>/dev/null &
-  else
-    "$IDEA_BIN" "$@" &>/dev/null &
-  fi
-}
-
 alias ls="lsd"
 source $HOME/.config/broot/launcher/bash/br
 
